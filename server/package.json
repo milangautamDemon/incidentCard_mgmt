@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "init": "^0.1.2",
+    "model": "^6.0.1",
+    "module": "^1.2.5",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.2",
+    "nodemon": "^3.1.0",
+    "schema": "^0.2.1",
+    "yarn": "^1.22.22"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  }
+}
