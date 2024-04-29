@@ -27,7 +27,8 @@ app.get("/api/inputDatas", async (req, res) => {
 
 app.post("/api/inputDatas", async (req, res) => {
     try{    
-        const {    
+        const { 
+            id,   
             incidentNumber,
             status,
             createdOn,
@@ -36,11 +37,12 @@ app.post("/api/inputDatas", async (req, res) => {
         } = req.body;
 
         const newInputs = new InputModel({
-                incidentNumber,
-                status,
-                createdOn,
-                title,
-                priority
+            id,
+            incidentNumber,
+            status,
+            createdOn,
+            title,
+            priority
         });
 
         await newInputs.save();
@@ -52,5 +54,26 @@ app.post("/api/inputDatas", async (req, res) => {
     }
 });
 
+app.delete("/api/inputDatas", async (req, res) => {
+    try{    
+        const { id } = req.body;
+
+        if (!id) {
+            return res.status(400).send('ID is required');
+        }
+
+        const result = await InputModel.deleteOne({ id });
+
+        if (!result) {
+            return res.status(404).send('Document not found');
+        }
+        res.json(result);
+        console.log("Data deleted successfully");
+    }
+    catch (error){
+        console.error('Error deleting data:', error);
+        res.status(500).send('Internal Server Error');
+    }
+})
 // const PORT = process.env.PORT || 5001;
 app.listen(5001, () => console.log("user listen at port 5001"));

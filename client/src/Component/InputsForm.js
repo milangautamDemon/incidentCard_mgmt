@@ -9,7 +9,7 @@ const InputsForm = ({stateChange, addCard, formState, addNewCardDisplay, setAddN
                 <input className="text-lg border-none font-bold outline-none shadow-md shadow-black/70 bg-gray-300 rounded-md px-4 py-2" placeholder='Status' onChange={e => stateChange({status: e.target.value, })} value={formState.status} ></input>
                 <input className="text-lg outline-none shadow-md shadow-black/70 font-bold bg-gray-300 rounded-md px-4 py-2" placeholder='Incident Number' onChange={e => stateChange({incidentNumber: e.target.value, })} value={formState.incidentNumber} ></input>
                 <input className="text-lg outline-none shadow-md shadow-black/70 font-bold bg-gray-300 rounded-md px-4 py-2" placeholder='Title' onChange={e =>stateChange({title: e.target.value,})} value={formState.title}></input>
-                <input className="text-lg outline-none shadow-md shadow-black/70 font-bold bg-gray-300 rounded-md px-4 py-2" placeholder='Date' onChange={e => stateChange({time: e.target.value, })} value={formState.time} ></input>
+                <input className="text-lg outline-none shadow-md shadow-black/70 font-bold bg-gray-300 rounded-md px-4 py-2" placeholder='Date' onChange={e => stateChange({createdOn: e.target.value, })} value={formState.createdOn} ></input>
                 <input className="text-lg outline-none shadow-md shadow-black/70 font-bold bg-gray-300 rounded-md px-4 py-2" placeholder='Priority Value' onChange={e => stateChange({priority: e.target.value, })} value={formState.priority} ></input>
                 
                 <div className="btn w-full flex gap-4 justify-end">
