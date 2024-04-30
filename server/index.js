@@ -12,7 +12,7 @@ mongoose.connect("mongodb://localhost:27017/incident_management")
  .catch(err => console.error('Database connection error:', err));
 
 
-app.get("/api/inputDatas", async (req, res) => {
+app.get("/api/getDatas", async (req, res) => {
     try{    
         const datas = await InputModel.find();
         res.json(datas);
@@ -25,7 +25,7 @@ app.get("/api/inputDatas", async (req, res) => {
 })
 
 
-app.post("/api/inputDatas", async (req, res) => {
+app.post("/api/submitDatas", async (req, res) => {
     try{    
         const { 
             id,   
@@ -54,7 +54,7 @@ app.post("/api/inputDatas", async (req, res) => {
     }
 });
 
-app.delete("/api/inputDatas", async (req, res) => {
+app.delete("/api/deleteDatas", async (req, res) => {
     try{    
         const { id } = req.body;
 

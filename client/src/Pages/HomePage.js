@@ -12,7 +12,7 @@ const HomePage = () => {
 
         const fetchData = async () => {
           try{   
-            const response = await fetch("http://localhost:5001/api/inputDatas", {
+            const response = await fetch("http://localhost:5001/api/getDatas", {
               method : "GET"
             });
             const datas = await response.json();
@@ -74,7 +74,7 @@ const HomePage = () => {
             else {
 
               try {
-                const response = await fetch('http://localhost:5001/api/inputDatas', {
+                const response = await fetch('http://localhost:5001/api/submitDatas', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ const HomePage = () => {
             }
               const data = { id: cardId };
               console.log(cardId, data)
-              const response = await fetch("http://localhost:5001/api/inputDatas", {
+              const response = await fetch("http://localhost:5001/api/deleteDatas", {
                 method: 'DELETE',
                 headers: {
                   'Content-Type': 'application/json',
